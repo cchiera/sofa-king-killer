@@ -1,28 +1,29 @@
+import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo";
-import styles from "@/app/page.module.css";
 import Nav from "@/components/nav";
+import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Home",
-  description: "The best app for doing the thing.",
-  url: "https://sofakingkiller.com",
+  title: "Sofa King Killer — Midnight Magic",
+  description: "Check out our Midnight Magic album.",
+  url: "https://sofakingkiller.com/music/midnight-magic",
   image: "https://example.com/og.png",
   twitterSite: "sofakingkiller",
 });
 
-export default function Home() {
+export default function MidnightMagic() {
   return (
     <>
       <SEOJsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          url: "https://example.com",
+          url: "https://sofakingkiller.com/music/midnight-magic",
         }}
       />
       <div className={styles.page}>
         <Nav />
-        <main className={styles.main}>Home Page</main>
+        <main className={styles.main}>Midnight Magic</main>
       </div>
     </>
   );
