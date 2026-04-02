@@ -1,0 +1,22 @@
+.hero {
+  position: relative;
+  background: #383838;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+}

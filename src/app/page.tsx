@@ -1,6 +1,7 @@
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import styles from "@/app/page.module.css";
 import Nav from "@/components/nav/nav";
+import Hero from "@/components/hero/hero";
 import Link from "next/link";
 
 export const metadata = generateSEO({
@@ -25,11 +26,10 @@ export default function Home() {
       <div className={styles.page}>
         <Nav />
         <main className={styles.main}>
-          {/* Hero */}
-          <section className={styles.hero}>
-            <h1>On the frontlines of making Carhartt fashionable </h1>
-          </section>
-          {/* Hero End */}
+          <Hero
+            heading="On the frontlines of making Carhartt fashionable"
+            slides={["/slide-1.jpg", "/slide-2.jpg", "/slide-3.jpg", "/slide-4.jpg"]}
+          />
           <section className={styles.content}>
             <p>
               Born in Akron, Ohio in 1999, Sofa King Killer built their
