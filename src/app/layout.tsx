@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Special_Elite } from "next/font/google";
+import { Special_Elite, DM_Mono, Playfair } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const specialElite = Special_Elite({
   weight: "400",
   variable: "--font-special-elite",
+  subsets: ["latin"],
+});
+
+const dmMono = DM_Mono({
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
@@ -31,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${specialElite.variable}`}
+      className={`${dmMono.variable} ${playfair.variable} ${specialElite.variable}`}
     >
       <body>{children}</body>
     </html>

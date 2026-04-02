@@ -42,6 +42,20 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  background: black;
+}
+
+h2 {
+  font-family: var(--font-playfair);
+  font-size: 3.35rem;
+  padding-block: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

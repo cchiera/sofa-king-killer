@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { generateSEO, SEOJsonLd } from "@/components/seo";
-import Nav from "@/components/nav";
+import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import Nav from "@/components/nav/nav";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({

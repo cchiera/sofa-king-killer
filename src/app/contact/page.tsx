@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { generateSEO, SEOJsonLd } from "@/components/seo";
+import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import styles from "../page.module.css";
-import Nav from "@/components/nav";
+import Nav from "@/components/nav/nav";
 
 export const metadata = generateSEO({
   title: "Sofa King Killer — Contact",
@@ -23,7 +23,9 @@ export default function Contact() {
       />
       <div className={styles.page}>
         <Nav />
-        <main className={styles.main}>Contact Page</main>
+        <main className={styles.main}>
+          <h2>Contact Page</h2>
+        </main>
       </div>
     </>
   );

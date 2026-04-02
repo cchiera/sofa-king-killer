@@ -1,8 +1,10 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import "./nav.css";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -13,6 +15,10 @@ const NAV_LINKS = [
       {
         href: "/music/stout-soaked-songs",
         label: "Stout Soaked Songs",
+      },
+      {
+        href: "/music/leechmilk-sofa-king-killer-split-ep",
+        label: "Leechmilk / Sofa King Killer Split EP",
       },
       {
         href: "/music/lust-crime-and-holiness",
@@ -185,7 +191,7 @@ export default function Nav() {
         {open && (
           <ul className="nav-dropdown-menu" role="menu">
             {NAV_LINKS.map(({ href, label, children }) => (
-              <>
+              <React.Fragment key={href}>
                 <li key={href} role="none">
                   <Link
                     href={href}
@@ -212,7 +218,7 @@ export default function Nav() {
                     </Link>
                   </li>
                 ))}
-              </>
+              </React.Fragment>
             ))}
           </ul>
         )}

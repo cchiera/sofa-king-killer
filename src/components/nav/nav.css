@@ -1,0 +1,278 @@
+/* ─── Variables ─────────────────────────────────────────────── */
+:root {
+  --nav-bg: #0a0a0a;
+  --nav-border: #2a2a2a;
+  --nav-text: #c8c8c8;
+  --nav-text-hover: #ffffff;
+  --nav-active: #e8003a;
+  --nav-accent: #e8003a;
+  --nav-submenu-bg: #111111;
+  --nav-logo-font: var(--font-special-elite);
+  --nav-body-font: var(--font-roboto);
+  --nav-height: 64px;
+  --nav-transition: 0.18s ease;
+}
+
+/* ─── Base Nav ───────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 2rem;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  font-family: var(--nav-body-font);
+  width: 100%;
+}
+
+/* ─── Logo ───────────────────────────────────────────────────── */
+.nav-logo {
+  font-family: var(--nav-logo-font);
+  font-size: clamp(1.5rem, 5vw, 30px);
+  color: var(--nav-text-hover);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color var(--nav-transition);
+  flex-shrink: 0;
+}
+
+.nav-logo:hover {
+  color: var(--nav-accent);
+}
+
+/* ─── Desktop Link List ──────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-parent-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.85rem;
+  font-family: var(--nav-body-font);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition:
+    color var(--nav-transition),
+    background var(--nav-transition);
+}
+
+.nav-links a:hover,
+.nav-parent-btn:hover {
+  color: var(--nav-text-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active,
+.nav-parent-btn.active {
+  color: var(--nav-active);
+}
+
+/* ─── Chevron ────────────────────────────────────────────────── */
+.nav-chevron {
+  font-size: 0.6rem;
+  line-height: 1;
+  transition: transform var(--nav-transition);
+}
+
+/* ─── Dropdown Submenu ───────────────────────────────────────── */
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  background: var(--nav-submenu-bg);
+  border: 1px solid var(--nav-border);
+  border-top: 2px solid var(--nav-accent);
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  animation: submenuIn 0.14s ease;
+}
+
+@keyframes submenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-submenu li {
+  margin: 0;
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  border-radius: 0;
+  transition:
+    color var(--nav-transition),
+    background var(--nav-transition),
+    padding-left var(--nav-transition);
+}
+
+.nav-submenu a:hover {
+  color: var(--nav-text-hover);
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 1.35rem;
+}
+
+.nav-submenu a.active {
+  color: var(--nav-active);
+}
+
+/* "All Music / All Media" separator feel */
+.nav-submenu li:first-child a {
+  color: #888;
+  font-size: 0.72rem;
+  border-bottom: 1px solid var(--nav-border);
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.6rem;
+}
+
+.nav-submenu li:first-child a:hover {
+  color: var(--nav-text-hover);
+}
+
+/* ─── Mobile Hamburger ───────────────────────────────────────── */
+.nav-dropdown {
+  display: none;
+  position: relative;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 2rem;
+  height: 2rem;
+  padding: 6px;
+  background: none;
+  border: 1px solid var(--nav-border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color var(--nav-transition);
+}
+
+.nav-toggle:hover {
+  border-color: var(--nav-accent);
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--nav-text-hover);
+  border-radius: 1px;
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease;
+  transform-origin: center;
+}
+
+/* ─── Mobile Dropdown Menu ───────────────────────────────────── */
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 220px;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  background: var(--nav-submenu-bg);
+  border: 1px solid var(--nav-border);
+  border-top: 2px solid var(--nav-accent);
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  animation: submenuIn 0.14s ease;
+}
+
+.nav-dropdown-menu li {
+  margin: 0;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nav-text);
+  text-decoration: none;
+  transition:
+    color var(--nav-transition),
+    background var(--nav-transition);
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--nav-text-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-dropdown-menu a.active {
+  color: var(--nav-active);
+}
+
+/* Child indented items in mobile */
+.nav-dropdown-child a {
+  padding-left: 2rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #777;
+}
+
+.nav-dropdown-child a:hover {
+  color: var(--nav-text-hover);
+}
+
+.nav-dropdown-child a.active {
+  color: var(--nav-active);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: block;
+  }
+}

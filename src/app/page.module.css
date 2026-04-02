@@ -14,86 +14,54 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-dm-mono), sans-serif;
   background-color: var(--background);
 }
 
 .main {
   display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  min-block-size: 100vh;
+  overflow-block: auto;
+  scroll-behavior: smooth;
 }
 
-.intro {
+.main p {
+  padding-block: 1rem;
+}
+
+.hero {
+  background: #383838;
+  background-image: url("/slide-1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  justify-content: center;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.content {
+  padding-inline: 10vw;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.contentAllMusic {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid white;
+  padding-block: 2rem;
 }
 
+.contentAllMusic img {
+  color: transparent;
+  width: 275px;
+  height: 100%;
+  flex-basis: 20%;
+}
+.contentAllMusic p {
+  flex-basis: 80%;
+}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
@@ -108,17 +76,12 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
   .intro {
     gap: 16px;
   }
 
   .intro h1 {
     font-size: 32px;
-    line-height: 40px;
     letter-spacing: -1.92px;
   }
 }
