@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
-import Nav from "@/components/nav/nav";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -22,7 +21,6 @@ export default function Flyers() {
         }}
       />
       <div className={styles.page}>
-        <Nav />
         <main className={styles.main}>Flyers Page</main>
       </div>
     </>

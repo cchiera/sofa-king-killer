@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Special_Elite, DM_Mono, Playfair } from "next/font/google";
+import Nav from "@/components/nav/nav";
+import Footer from "@/components/footer/footer";
 import "./globals.css";
 
 const specialElite = Special_Elite({
@@ -35,7 +37,11 @@ export default function RootLayout({
       lang="en"
       className={`${dmMono.variable} ${playfair.variable} ${specialElite.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

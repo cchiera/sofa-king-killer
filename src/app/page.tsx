@@ -1,6 +1,5 @@
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import styles from "@/app/page.module.css";
-import Nav from "@/components/nav/nav";
 import Hero from "@/components/hero/hero";
 import Link from "next/link";
 
@@ -24,7 +23,6 @@ export default function Home() {
         }}
       />
       <div className={styles.page}>
-        <Nav />
         <main className={styles.main}>
           <Hero
             heading="On the frontlines of making Carhartt fashionable"

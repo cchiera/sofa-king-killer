@@ -1,0 +1,135 @@
+/* ─── Variables ─────────────────────────────────────────────── */
+:root {
+  --footer-bg: #0a0a0a;
+  --footer-border: #2a2a2a;
+  --footer-text: #888;
+  --footer-text-hover: #ffffff;
+  --footer-accent: #e8003a;
+  --footer-transition: 0.18s ease;
+}
+
+/* ─── Base Footer ────────────────────────────────────────────── */
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  padding: 2.5rem 2rem 1.5rem;
+  font-family: var(--font-dm-mono, monospace);
+}
+
+/* ─── Inner Layout ───────────────────────────────────────────── */
+.footer-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* ─── Brand ──────────────────────────────────────────────────── */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-logo {
+  font-family: var(--font-special-elite, serif);
+  font-size: 1.25rem;
+  color: var(--footer-text-hover);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color var(--footer-transition);
+}
+
+.footer-logo:hover {
+  color: var(--footer-accent);
+}
+
+.footer-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--footer-text);
+}
+
+/* ─── Nav Links ──────────────────────────────────────────────── */
+.footer-nav {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav-group-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--footer-accent);
+  margin-bottom: 0.25rem;
+}
+
+.footer-nav-group a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color var(--footer-transition);
+}
+
+.footer-nav-group a:hover {
+  color: var(--footer-text-hover);
+}
+
+/* ─── Bottom Bar ─────────────────────────────────────────────── */
+.footer-bottom {
+  max-width: 100%;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--footer-text);
+}
+
+.footer-location {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--footer-text);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .footer-nav {
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
-import Nav from "@/components/nav/nav";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -23,7 +22,6 @@ export default function About() {
         }}
       />
       <div className={styles.page}>
-        <Nav />
         <main className={styles.main}>
           <section className={styles.content}>
             <h2>Pronounced sofakingkiller</h2>
