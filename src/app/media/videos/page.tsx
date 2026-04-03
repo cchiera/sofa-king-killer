@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
+import YouTubeGallery from "@/components/YouTubeGallery/YouTubeGallery";
+import { Video } from "@/components/YouTubeGallery/types";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -10,6 +11,45 @@ export const metadata = generateSEO({
   image: "https://example.com/og.png",
   twitterSite: "sofakingkiller",
 });
+
+const videos: Video[] = [
+  {
+    id: "Gy2QlIX9hU8",
+    title: "Sofa King Killer - No Other Path to Pursue",
+    channel: "eyeburngreen",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-1.jpg",
+  },
+  {
+    id: "clN5YRin-6E",
+    title: "Sofa King Killer - Take Me Up On That",
+    channel: "RockForLife Polly",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-2.jpg",
+  },
+  {
+    id: "FqtUZf3U6Uw",
+    title: "Killing People Is Easy",
+    channel: "Sofa King Killer - Topic",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-3.jpg",
+  },
+  {
+    id: "7VpNhDv8OqM",
+    title: "Sofa King Killer - Killing People Is Easy",
+    channel: "stratis82",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-4.jpg",
+  },
+];
 
 export default function Videos() {
   return (
@@ -23,7 +63,9 @@ export default function Videos() {
       />
       <div className={styles.page}>
         <Breadcrumbs />
-        <main className={styles.main}>Video Page</main>
+        <main className={styles.main}>
+          <YouTubeGallery videos={videos} />
+        </main>
       </div>
     </>
   );
