@@ -58,6 +58,9 @@
 
 /* ─── Nav Links ──────────────────────────────────────────────── */
 .footer-nav {
+  max-width: 100%;
+  width: 100%;
+  justify-content: space-around;
   display: flex;
   gap: 3rem;
   flex-wrap: wrap;

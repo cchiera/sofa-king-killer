@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -22,6 +23,7 @@ export default function About() {
         }}
       />
       <div className={styles.page}>
+        <Breadcrumbs />
         <main className={styles.main}>
           <section className={styles.content}>
             <h2>Pronounced sofakingkiller</h2>

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import ContactForm from "@/components/ContactForm/ContactForm";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import styles from "../page.module.css";
 
 export const metadata = generateSEO({
@@ -21,8 +22,10 @@ export default function Contact() {
         }}
       />
       <div className={styles.page}>
+        <Breadcrumbs />
         <main className={styles.main}>
-          <h2>Contact Page</h2>
+          <h2>Contact</h2>
+          <ContactForm />
         </main>
       </div>
     </>

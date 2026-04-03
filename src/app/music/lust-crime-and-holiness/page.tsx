@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -48,25 +50,41 @@ export default function LustCrimeAndHoliness() {
         }}
       />
       <div className={styles.page}>
+        <Breadcrumbs />
         <main className={styles.main}>
-          <Image
-            src="/lust-crime-and-holiness.jpg"
-            alt="Lust, Crime, and Holiness"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
-          />
-          <h2>Lust, Crime, and Holiness</h2>
-          <ol>
-            {tracks.map((track) => (
-              <li key={track.num}>
+          <section className={styles.content}>
+            <h2>Lust, Crime, and Holiness</h2>
+            <h3>(2000 · Independent)</h3>
+            <div className={styles.contentAllMusic}>
+              <div>
+                <Image
+                  src="/lust-crime-and-holiness.jpg"
+                  alt="Lust, Crime, and Holiness"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+              <div>
                 <p>
-                  {track.title} | {track.duration}
+                  A raw, unpolished slab of sludge and doom from a band just
+                  getting started and already playing heavier than most would
+                  dare. Released independently, it caught the ear of Gary at
+                  Shifty Records (USA), who sent a demo to Tony Presedo at Tee
+                  Pee Records and set the wheels in motion for what came next.
                 </p>
-              </li>
-            ))}
-          </ol>
+                <ol>
+                  {tracks.map((track) => (
+                    <li key={track.num}>
+                      {track.title} | {track.duration}
+                    </li>
+                  ))}
+                </ol>
+                <p className={styles.moreInfo}>Listen links here</p>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </>

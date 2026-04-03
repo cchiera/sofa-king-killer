@@ -24,6 +24,7 @@
   min-block-size: 100vh;
   overflow-block: auto;
   scroll-behavior: smooth;
+  width: 100%;
 }
 
 .main p {
@@ -47,9 +48,11 @@
   height: 100%;
   flex-basis: 20%;
 }
+
 .contentAllMusic p {
   flex-basis: 80%;
 }
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -21,6 +22,7 @@ export default function Videos() {
         }}
       />
       <div className={styles.page}>
+        <Breadcrumbs />
         <main className={styles.main}>Video Page</main>
       </div>
     </>

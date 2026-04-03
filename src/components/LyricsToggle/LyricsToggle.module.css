@@ -1,0 +1,75 @@
+.wrap {
+  display: inline;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--nav-accent, #e8003a);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
+}
+
+.trigger:hover {
+  opacity: 0.75;
+}
+
+/* ─── Overlay ────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* ─── Modal ──────────────────────────────────────────────────── */
+.modal {
+  position: relative;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-top: 2px solid var(--nav-accent, #e8003a);
+  border-radius: 3px;
+  padding: 2rem 2rem 1.5rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.lyrics {
+  font-family: var(--font-dm-mono, monospace);
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: #ccc;
+  margin: 0;
+}

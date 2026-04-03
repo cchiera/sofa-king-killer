@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
+import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
+import PhotoGallery, { Photo } from "@/components/PhotoGallery/PhotoGallery";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
@@ -9,6 +11,13 @@ export const metadata = generateSEO({
   image: "https://example.com/og.png",
   twitterSite: "sofakingkiller",
 });
+
+const flyers: Photo[] = [
+  { src: "/slide-1.jpg", alt: "Sofa King Killer live photo 1" },
+  { src: "/slide-2.jpg", alt: "Sofa King Killer live photo 2" },
+  { src: "/slide-3.jpg", alt: "Sofa King Killer live photo 3" },
+  { src: "/slide-4.jpg", alt: "Sofa King Killer live photo 4" },
+];
 
 export default function Flyers() {
   return (
@@ -21,7 +30,10 @@ export default function Flyers() {
         }}
       />
       <div className={styles.page}>
-        <main className={styles.main}>Flyers Page</main>
+        <Breadcrumbs />
+        <main className={styles.main}>
+          <PhotoGallery photos={flyers} />
+        </main>
       </div>
     </>
   );
