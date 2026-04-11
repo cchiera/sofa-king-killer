@@ -2,6 +2,8 @@ import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import styles from "@/app/page.module.css";
 import Hero from "@/components/hero/hero";
 import Link from "next/link";
+import YouTubeGallery from "@/components/YouTubeGallery/YouTubeGallery";
+// import { Video } from "@/components/YouTubeGallery/types";
 
 export const metadata = generateSEO({
   title: "Sofa King Killer — Home",
@@ -11,6 +13,47 @@ export const metadata = generateSEO({
   image: "https://example.com/og.png",
   twitterSite: "sofakingkiller",
 });
+
+const slides = ["/slide-1.jpg", "/slide-2.jpg", "/slide-3.jpg", "/slide-4.jpg"];
+
+const videos = [
+  {
+    id: "Gy2QlIX9hU8",
+    title: "Sofa King Killer - No Other Path to Pursue",
+    channel: "eyeburngreen",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-1.jpg",
+  },
+  {
+    id: "clN5YRin-6E",
+    title: "Sofa King Killer - Take Me Up On That",
+    channel: "RockForLife Polly",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-2.jpg",
+  },
+  {
+    id: "FqtUZf3U6Uw",
+    title: "Killing People Is Easy",
+    channel: "Sofa King Killer - Topic",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-3.jpg",
+  },
+  {
+    id: "7VpNhDv8OqM",
+    title: "Sofa King Killer - Killing People Is Easy",
+    channel: "stratis82",
+    views: "",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-4.jpg",
+  },
+];
 
 export default function Home() {
   return (
@@ -26,7 +69,7 @@ export default function Home() {
         <main className={styles.main}>
           <Hero
             heading="On the frontlines of making Carhartt fashionable"
-            slides={["/slide-1.jpg", "/slide-2.jpg", "/slide-3.jpg", "/slide-4.jpg"]}
+            slides={slides}
           />
           <section className={styles.content}>
             <p>
@@ -41,6 +84,7 @@ export default function Home() {
             </p>
             <Link href="/about/">Learm more</Link>
           </section>
+          <YouTubeGallery videos={videos} />
         </main>
       </div>
     </>

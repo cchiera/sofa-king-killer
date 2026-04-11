@@ -1,5 +1,8 @@
 /* ─── Breadcrumbs ────────────────────────────────────────────── */
 .breadcrumbs {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 99;
   padding: 0.6rem 2rem;
   border-bottom: 1px solid var(--nav-border);
   background-color: var(--nav-bg);
