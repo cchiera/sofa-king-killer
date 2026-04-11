@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Music",
+  title: "Music | Sofa King Killer",
   description: "Check out our music.",
   url: "https://sofakingkiller.com/music",
   image: "https://example.com/og.png",

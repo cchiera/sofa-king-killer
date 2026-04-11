@@ -5,7 +5,7 @@ import { Video } from "@/components/YouTubeGallery/types";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Videos",
+  title: "Videos | Sofa King Killer",
   description: "Check out our oldest videos.",
   url: "https://sofakingkiller.com/media/videos",
   image: "https://example.com/og.png",
@@ -17,7 +17,6 @@ const videos: Video[] = [
     id: "Gy2QlIX9hU8",
     title: "Sofa King Killer - No Other Path to Pursue",
     channel: "eyeburngreen",
-    views: "",
     duration: "",
     date: "",
     thumbnail: "/slide-1.jpg",
@@ -26,7 +25,6 @@ const videos: Video[] = [
     id: "clN5YRin-6E",
     title: "Sofa King Killer - Take Me Up On That",
     channel: "RockForLife Polly",
-    views: "",
     duration: "",
     date: "",
     thumbnail: "/slide-2.jpg",
@@ -35,7 +33,6 @@ const videos: Video[] = [
     id: "FqtUZf3U6Uw",
     title: "Killing People Is Easy",
     channel: "Sofa King Killer - Topic",
-    views: "",
     duration: "",
     date: "",
     thumbnail: "/slide-3.jpg",
@@ -44,7 +41,6 @@ const videos: Video[] = [
     id: "7VpNhDv8OqM",
     title: "Sofa King Killer - Killing People Is Easy",
     channel: "stratis82",
-    views: "",
     duration: "",
     date: "",
     thumbnail: "/slide-4.jpg",

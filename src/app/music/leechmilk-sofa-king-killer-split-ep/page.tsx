@@ -2,13 +2,15 @@ import Image from "next/image";
 import { generateSEO, SEOJsonLd } from "@/components/seo/seo";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import LyricsToggle from "@/components/LyricsToggle/LyricsToggle";
+import YouTubeGallery from "@/components/YouTubeGallery/YouTubeGallery";
+import { Video } from "@/components/YouTubeGallery/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBandcamp } from "@fortawesome/free-brands-svg-icons";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Lust, Crime, and Holiness",
-  description: "Check out our Lust, Crime, and Holiness album.",
+  title: "Split EP | Sofa King Killer",
+  description: "Leechmilk / Sofa King Killer Split EP",
   url: "https://sofakingkiller.com/music/lust-crime-and-holiness",
   image: "https://example.com/og.png",
   twitterSite: "sofakingkiller",
@@ -150,6 +152,41 @@ const tracks = [
   },
 ];
 
+const videos: Video[] = [
+  {
+    id: "Gy2QlIX9hU8",
+    title: "Sofa King Killer - No Other Path to Pursue",
+    channel: "eyeburngreen",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-1.jpg",
+  },
+  {
+    id: "clN5YRin-6E",
+    title: "Sofa King Killer - Take Me Up On That",
+    channel: "RockForLife Polly",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-2.jpg",
+  },
+  {
+    id: "FqtUZf3U6Uw",
+    title: "Killing People Is Easy",
+    channel: "Sofa King Killer - Topic",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-3.jpg",
+  },
+  {
+    id: "7VpNhDv8OqM",
+    title: "Sofa King Killer - Killing People Is Easy",
+    channel: "stratis82",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-4.jpg",
+  },
+];
+
 export default function LustCrimeAndHoliness() {
   return (
     <>
@@ -164,32 +201,43 @@ export default function LustCrimeAndHoliness() {
         <Breadcrumbs />
         <main className={styles.main}>
           <section className={styles.content}>
-            <Image
-              src="/leechmilk-sofa-king-killer-split.jpg"
-              alt="Leechmilk / Sofa King Killer Split EP"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-            />
             <h2>Leechmilk / Sofa King Killer Split EP</h2>
-            <ol>
-              {tracks.map((track) => (
-                <li key={track.num}>
-                  {track.title} | {track.duration}
-                  {track.lyrics && (
-                    <>
-                      {" "}
-                      | <LyricsToggle lyrics={track.lyrics} />
-                    </>
-                  )}{" "}
-                  |{" "}
-                  <a href={track.url} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faBandcamp} />
-                  </a>
-                </li>
-              ))}
-            </ol>
+            <div className={styles.contentAllMusic}>
+              <div>
+                <Image
+                  src="/leechmilk-sofa-king-killer-split.jpg"
+                  alt="Leechmilk / Sofa King Killer Split EP"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+              <div>
+                <ol>
+                  {tracks.map((track) => (
+                    <li key={track.num}>
+                      {track.title} | {track.duration}
+                      {track.lyrics && (
+                        <>
+                          {" "}
+                          | <LyricsToggle lyrics={track.lyrics} />
+                        </>
+                      )}{" "}
+                      |{" "}
+                      <a
+                        href={track.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faBandcamp} />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                <YouTubeGallery videos={videos} />
+              </div>
+            </div>
           </section>
         </main>
       </div>

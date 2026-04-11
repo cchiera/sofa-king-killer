@@ -53,9 +53,7 @@ function VideoCard({ video, onClick, index }: VideoCardProps) {
         <div className="meta">
           <p className="video-title">{video.title}</p>
           <p className="channel-name">{video.channel}</p>
-          <p className="subinfo">
-            {video.views} · {video.date}
-          </p>
+          <p className="subinfo">{video.date}</p>
         </div>
       </div>
     </div>
@@ -92,7 +90,7 @@ function Modal({ video, onClose }: ModalProps) {
         <div className="modal-info">
           <h2 className="modal-title">{video.title}</h2>
           <p className="modal-sub">
-            {video.channel} · {video.views} · {video.date}
+            {video.channel} · {video.date}
           </p>
         </div>
       </div>

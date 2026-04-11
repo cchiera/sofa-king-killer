@@ -5,7 +5,7 @@ import PhotoGallery, { Photo } from "@/components/PhotoGallery/PhotoGallery";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Flyers",
+  title: "Flyers | Sofa King Killer",
   description: "Check out our oldest flyers.",
   url: "https://sofakingkiller.com/media/flyers",
   image: "https://example.com/og.png",

@@ -4,10 +4,12 @@ import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import LyricsToggle from "@/components/LyricsToggle/LyricsToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBandcamp } from "@fortawesome/free-brands-svg-icons";
+import YouTubeGallery from "@/components/YouTubeGallery/YouTubeGallery";
+import { Video } from "@/components/YouTubeGallery/types";
 import styles from "@/app/page.module.css";
 
 export const metadata = generateSEO({
-  title: "Sofa King Killer — Midnight Magic",
+  title: "Midnight Magic | Sofa King Killer",
   description: "Check out our Midnight Magic album.",
   url: "https://sofakingkiller.com/music/midnight-magic",
   image: "https://example.com/og.png",
@@ -180,6 +182,41 @@ const tracks = [
   },
 ];
 
+const videos: Video[] = [
+  {
+    id: "Gy2QlIX9hU8",
+    title: "Sofa King Killer - No Other Path to Pursue",
+    channel: "eyeburngreen",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-1.jpg",
+  },
+  {
+    id: "clN5YRin-6E",
+    title: "Sofa King Killer - Take Me Up On That",
+    channel: "RockForLife Polly",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-2.jpg",
+  },
+  {
+    id: "FqtUZf3U6Uw",
+    title: "Killing People Is Easy",
+    channel: "Sofa King Killer - Topic",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-3.jpg",
+  },
+  {
+    id: "7VpNhDv8OqM",
+    title: "Sofa King Killer - Killing People Is Easy",
+    channel: "stratis82",
+    duration: "",
+    date: "",
+    thumbnail: "/slide-4.jpg",
+  },
+];
+
 export default function MidnightMagic() {
   return (
     <>
@@ -194,14 +231,6 @@ export default function MidnightMagic() {
         <Breadcrumbs />
         <main className={styles.main}>
           <section className={styles.content}>
-            <Image
-              src="/midnight-magic.jpg"
-              alt="Midnight Magic"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-            />
             <h2>
               <a
                 href="https://sofakingkiller.bandcamp.com/album/midnight-magic"
@@ -211,23 +240,42 @@ export default function MidnightMagic() {
                 Midnight Magic
               </a>
             </h2>
-            <ol>
-              {tracks.map((track) => (
-                <li key={track.num}>
-                  {track.title} | {track.duration}
-                  {track.lyrics && (
-                    <>
-                      {" "}
-                      | <LyricsToggle lyrics={track.lyrics} />
-                    </>
-                  )}{" "}
-                  |{" "}
-                  <a href={track.url} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faBandcamp} />
-                  </a>
-                </li>
-              ))}
-            </ol>
+            <div className={styles.contentAllMusic}>
+              <div>
+                <Image
+                  src="/midnight-magic.jpg"
+                  alt="Midnight Magic"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+              <div>
+                <ol>
+                  {tracks.map((track) => (
+                    <li key={track.num}>
+                      {track.title} | {track.duration}
+                      {track.lyrics && (
+                        <>
+                          {" "}
+                          | <LyricsToggle lyrics={track.lyrics} />
+                        </>
+                      )}{" "}
+                      |{" "}
+                      <a
+                        href={track.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faBandcamp} />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+                <YouTubeGallery videos={videos} />
+              </div>
+            </div>
           </section>
         </main>
       </div>
